@@ -72,6 +72,12 @@ public class GameController : MonoBehaviour
     // Game is done
     public void GameOver()
     {
+        StartCoroutine(LoadMenu());
+    }
+
+    IEnumerator LoadMenu()
+    {
+        yield return new WaitForSeconds(3f);
         SceneManager.LoadScene("Menu");
     }
 
