@@ -63,11 +63,10 @@ public class CircleGroup : MonoBehaviour
     // Set size in aTime seconds
     public IEnumerator SetSizeSlow(float toRadius, float aTime = 0f)
     {
-
-        for (float t = 0.0f; t < aTime; t += 1f/4)
+        for (float t = 0; t <= 1.0f; t += (1f / aTime) / 4f)
         {
             SetSize(Mathf.SmoothStep(radius, toRadius, t));
-            yield return new WaitForSeconds(1f/4);
+            yield return new WaitForSeconds((1f /aTime) / 4f);
         }
 
         radius = toRadius;
